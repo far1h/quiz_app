@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
-import 'package:quiz_app/questions_screen.dart';
-import 'package:quiz_app/results_screen.dart';
-import 'package:quiz_app/start_screen.dart';
+import 'package:quiz_app/screens/questions_screen.dart';
+import 'package:quiz_app/screens/results_screen.dart';
+import 'package:quiz_app/screens/start_screen.dart';
 
 class GradientContainer extends StatefulWidget {
   const GradientContainer({
@@ -33,6 +33,13 @@ class _GradientContainerState extends State<GradientContainer> {
     }
   }
 
+  void restartQuiz() {
+    setState(() {
+        selectedAnswers = [];
+        activeScreen = 'question-screen';
+      });
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget screenWidget = StartScreen(switchScreen);
@@ -41,7 +48,7 @@ class _GradientContainerState extends State<GradientContainer> {
       screenWidget = QuestionsScreen(onSelectAnswer: chooseAnswer);
     }
     if (activeScreen == 'results-screen') {
-      screenWidget = ResultsScreen(chosenAnswers: selectedAnswers,);
+      screenWidget = ResultsScreen(chosenAnswers: selectedAnswers, onRestart: restartQuiz,);
     }
 
     return Container(
