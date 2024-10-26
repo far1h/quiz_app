@@ -34,7 +34,7 @@ class ResultsScreen extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                QuestionsSummary(),
+                QuestionsSummary(summaryData: getSummaryData(),),
                 const SizedBox(
                   height: 30,
                 ),
@@ -57,7 +57,15 @@ class QuestionsSummary extends StatelessWidget {
       children: summaryData.map(
         (e) {
           return Row(children: [
-            Text(((e['question_index'] as int)+ 1) as String),
+            Text(((e['question_index'] as int)+ 1).toString()),
+            Column(
+              children: [
+                Text(e['question'] as String),
+                const SizedBox(height: 5,),
+                Text(e['user_answer'] as String),
+                Text(e['correct_answer'] as String),
+              ],
+            )
           ],);
         },
       ).toList(),

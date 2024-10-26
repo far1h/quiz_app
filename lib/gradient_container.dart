@@ -29,7 +29,6 @@ class _GradientContainerState extends State<GradientContainer> {
     if (selectedAnswers.length == questions.length) {
       setState(() {
         activeScreen = 'results-screen';
-        selectedAnswers = [];
       });
     }
   }
