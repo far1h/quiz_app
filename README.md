@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-![ezgif-4-5764b61f16](https://github.com/user-attachments/assets/86faa6e5-2c58-4be9-91f7-e5c020eaf335){ .image25percent }
+<img src="https://github.com/user-attachments/assets/86faa6e5-2c58-4be9-91f7-e5c020eaf335" width="300" height="auto" />
 
 ## Getting Started
 
