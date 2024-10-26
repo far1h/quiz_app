@@ -12,7 +12,7 @@ class GradientContainer extends StatefulWidget {
 }
 
 class _GradientContainerState extends State<GradientContainer> {
-  Widget activeScreen = const StartScreen();
+  Widget activeScreen = const StartScreen(switchScreen);
 
   void switchScreen() {
     setState(() {
