@@ -34,12 +34,33 @@ class ResultsScreen extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                const Text("List of answers and questions..."),
+                QuestionsSummary(),
                 const SizedBox(
                   height: 30,
                 ),
                 TextButton(onPressed: () {}, child: const Text('Restart Quiz!'))
               ],
             )));
+  }
+}
+
+class QuestionsSummary extends StatelessWidget {
+  const QuestionsSummary({
+    super.key, required this.summaryData,
+  });
+
+    final List<Map<String, Object>> summaryData;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: summaryData.map(
+        (e) {
+          return Row(children: [
+            Text(((e['question_index'] as int)+ 1) as String),
+          ],);
+        },
+      ).toList(),
+    );
   }
 }
