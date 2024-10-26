@@ -36,7 +36,7 @@ class _GradientContainerState extends State<GradientContainer> {
   void restartQuiz() {
     setState(() {
         selectedAnswers = [];
-        activeScreen = 'question-screen';
+        activeScreen = 'questions-screen';
       });
   }
 
