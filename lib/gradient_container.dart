@@ -22,6 +22,10 @@ class _GradientContainerState extends State<GradientContainer> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidget = activeScreen == 'start-screen'
+            ? StartScreen(switchScreen)
+            : const QuestionsScreen();
+
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -33,9 +37,7 @@ class _GradientContainerState extends State<GradientContainer> {
         end: Alignment.bottomRight,
       )),
       child: Center(
-        child: activeScreen == 'start-screen'
-            ? StartScreen(switchScreen)
-            : const QuestionsScreen(),
+        child: screenWidget,
       ),
     );
   }
