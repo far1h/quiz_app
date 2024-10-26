@@ -42,7 +42,7 @@ class _GradientContainerState extends State<GradientContainer> {
       screenWidget = QuestionsScreen(onSelectAnswer: chooseAnswer);
     }
     if (activeScreen == 'results-screen') {
-      screenWidget = const ResultsScreen();
+      screenWidget = ResultsScreen(chosenAnswers: selectedAnswers,);
     }
 
     return Container(
