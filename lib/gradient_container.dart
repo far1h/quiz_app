@@ -12,17 +12,11 @@ class GradientContainer extends StatefulWidget {
 }
 
 class _GradientContainerState extends State<GradientContainer> {
-  Widget? activeScreen;
-
-  @override
-  void initState() {
-    activeScreen = StartScreen(switchScreen);
-    super.initState();
-  }
+  var activeScreen = 'start-screen';
 
   void switchScreen() {
     setState(() {
-      activeScreen = const QuestionsScreen();
+      activeScreen = 'questions-screen';
     });
   }
 
@@ -39,7 +33,9 @@ class _GradientContainerState extends State<GradientContainer> {
         end: Alignment.bottomRight,
       )),
       child: Center(
-        child: activeScreen,
+        child: activeScreen == 'start-screen'
+            ? StartScreen(switchScreen)
+            : const QuestionsScreen(),
       ),
     );
   }
