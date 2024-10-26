@@ -38,9 +38,7 @@ class _GradientContainerState extends State<GradientContainer> {
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       )),
-      child: Center(
-        child: screenWidget,
-      ),
+      child: screenWidget,
     );
   }
 }
