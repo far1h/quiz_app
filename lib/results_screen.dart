@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
+import 'package:quiz_app/questions_summary.dart';
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen({
@@ -41,34 +42,5 @@ class ResultsScreen extends StatelessWidget {
                 TextButton(onPressed: () {}, child: const Text('Restart Quiz!'))
               ],
             )));
-  }
-}
-
-class QuestionsSummary extends StatelessWidget {
-  const QuestionsSummary({
-    super.key, required this.summaryData,
-  });
-
-    final List<Map<String, Object>> summaryData;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: summaryData.map(
-        (e) {
-          return Row(children: [
-            Text(((e['question_index'] as int)+ 1).toString()),
-            Column(
-              children: [
-                Text(e['question'] as String),
-                const SizedBox(height: 5,),
-                Text(e['user_answer'] as String),
-                Text(e['correct_answer'] as String),
-              ],
-            )
-          ],);
-        },
-      ).toList(),
-    );
   }
 }
